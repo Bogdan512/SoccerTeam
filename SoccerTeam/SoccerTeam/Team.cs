@@ -15,12 +15,9 @@ namespace SoccerTeam
             this.points = points;
         }
 
-        public static string[] Print(Team[] teamsRanking)
+        public string Print()
         {
-            string[] result = new string[teamsRanking.Length];
-            for (int i = 0; i < teamsRanking.Length; i++)
-                result[i] = (teamsRanking[i].name + "- " + teamsRanking[i].points);
-            return result;
+            return this.name + " - " + this.points;
         }
     }
 }

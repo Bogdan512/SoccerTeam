@@ -4,7 +4,11 @@ using System.Text;
 
 namespace SoccerTeam
 {
-    class Ranking
+    public class Ranking
     {
+        public string Print(Team team)
+        {
+            return team.Print();
+        }
     }
 }

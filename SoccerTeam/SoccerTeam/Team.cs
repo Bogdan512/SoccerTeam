@@ -17,7 +17,7 @@ namespace SoccerTeam
 
         public string Print()
         {
-            return this.name + " - " + this.points;
+            return $"{ name} - { points}";
         }
     }
 }

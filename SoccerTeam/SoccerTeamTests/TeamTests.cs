@@ -17,12 +17,18 @@ namespace SoccerTeam.Tests
     public class RankingTests
     {
         [Fact]
-        public void Check_If_RankingPrint_Returns_A_Team()
+        public void Check_If_RankingPrint_Returns_All_Teams_In_The_Input_Order()
         {
-            Team team = new Team("Barsa", 14);
-            Ranking ranking = new Ranking();
-            string actual = ranking.Print(team);
-            Assert.Equal("Barsa - 14", actual);
+            Ranking rank = new Ranking("Barsa", 38);
+            Ranking[] ranking = new Ranking[]
+            {
+                new Ranking("CFR", 37),
+                new Ranking("Astra",35),
+                new Ranking("FC",33)
+            };
+            string[] expected = { "CFR - 37", "Astra - 35", "FC - 33" };
+            string[] actual = rank.Print(ranking);
+            Assert.Equal(expected, actual);
         }
     }
 }

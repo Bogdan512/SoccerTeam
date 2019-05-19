@@ -6,7 +6,7 @@ namespace SoccerTeam
     {
         static void Main(string[] args)
         {
-            Ranking ranking = new Ranking();
+            //Ranking ranking = new Ranking();
             //Console.WriteLine(ranking.Print());
             Console.Read();
         }

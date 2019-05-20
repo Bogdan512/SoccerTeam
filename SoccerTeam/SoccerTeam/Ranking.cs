@@ -6,22 +6,21 @@ namespace SoccerTeam
 {
     public class Ranking
     {
-        string name;
-        int points;
-
-        public Ranking(string _name, int _points)
+        private Team[] teams ;
+        public Ranking(Team[] _teams)
         {
-            this.name = _name;
-            this.points = _points;
+            this.teams = _teams;
         }
-        public string[] Print(Ranking[] ranking )
+
+        public string[] Print()
         {
-            string[] result = new string[ranking.Length];
-            for (int i = 0; i < ranking.Length; i++)
+            string[] result = new string[teams.Length]; ;
+            for (int i = 0; i < result.Length; i++)
             {
-                Team team = new Team(ranking[i].name,ranking[i].points);
-                result[i] = team.Print();
+                result[i] = teams[i].Print();
+                Console.WriteLine(result[i]);
             }
+            
             return result;
         }
     }

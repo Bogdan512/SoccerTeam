@@ -19,15 +19,17 @@ namespace SoccerTeam.Tests
         [Fact]
         public void Check_If_RankingPrint_Returns_All_Teams_In_The_Input_Order()
         {
-            Ranking rank = new Ranking("Barsa", 38);
-            Ranking[] ranking = new Ranking[]
+            var teams = new Team[]
             {
-                new Ranking("CFR", 37),
-                new Ranking("Astra",35),
-                new Ranking("FC",33)
+                new Team("CFR",  37),
+                new Team("Astra",35),
+                new Team("FC",33)
             };
+           
+            Ranking ranking = new Ranking(teams);
+
             string[] expected = { "CFR - 37", "Astra - 35", "FC - 33" };
-            string[] actual = rank.Print(ranking);
+            string[] actual = ranking.Print();
             Assert.Equal(expected, actual);
         }
     }

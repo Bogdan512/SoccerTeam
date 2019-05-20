@@ -6,19 +6,15 @@ namespace SoccerTeam
     {
         static void Main(string[] args)
         {
-            Team team = new Team("A", 4);
-            Team[] aTeam = new Team[]
+            var teams = new Team[]
             {
-                new Team( "CFR", 35 ),
-                new Team( "UCLUJ",33 ),
-                new Team( "Steaua",28 ),
+                new Team("CFR",  37),
+                new Team("Astra",35),
+                new Team("FC",33)
             };
-            string[] st = team.Print(aTeam);
-            foreach(string s in st)
-            {
-                Console.WriteLine(s);
-            }
-            
+            Ranking ranking = new Ranking(teams);
+            string[] actual = ranking.Print();
+
             Console.Read();
         }
     }

@@ -18,7 +18,6 @@ namespace SoccerTeam
             for (int i = 0; i < result.Length; i++)
             {
                 result[i] = teams[i].Print();
-                Console.WriteLine(result[i]);
             }
             
             return result;

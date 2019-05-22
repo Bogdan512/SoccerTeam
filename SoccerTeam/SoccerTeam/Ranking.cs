@@ -6,12 +6,18 @@ namespace SoccerTeam
 {
     public class Ranking
     {
-        private Team[] teams ;
+        private Team[] teams;
+        private Game game;
+        
         public Ranking(Team[] teams)
         {
             this.teams = teams;
         }
 
+        public Ranking(Game games)
+        {
+            this.game = games;
+        }
         public string[] Print()
         {
             string[] result = new string[teams.Length]; ;
@@ -22,41 +28,38 @@ namespace SoccerTeam
             return result;
         }
 
-        public string[] Update()
+        public void Update(Game game)
         {
-            string[] result = new string[teams.Length];
-            for (int i = 0; i < result.Length; i++)
+            for (int i = 0; i < teams.Length; i++)
             {
 
-                result[i] = teams[i].Print();
+                    if (teams[i].name == game.team1)
+                    {
+                        teams[i] = new Team(game.team1, teams[i].points + game.pointsTeam1);
+                    }
+                    if (teams[i].name == game.team2)
+                    {
+                        teams[i] = new Team(game.team2, teams[i].points + game.pointsTeam2);
+                    }              
             }
-            return result;
+            BubbleSort(teams);
         }
 
-        //public string[] Update()
-        //{
-        //    string[] result = new string[teams.Length];
-        //    string[] beforeGame = new string[this.teams.Length];
-        //    string[] afterGame = new string[teams.Length];
-        //    for (int i = 0; i < result.Length; i++)
-        //    {
-        //        beforeGame[i] = this.teams[i].Print();
-        //        afterGame[i] = teams[i].Print();
-        //        result[i] = teams[i].Print();
-        //    }
-        //    for (int j = 0; j < result.Length; j++)
-        //    {
-        //        for (int k = 0; k < result.Length; k++)
-        //        {
-        //            if (beforeGame[j][beforeGame.Length - 1] != afterGame[k][afterGame.Length - 1])
-        //            {
-        //                result[j] = afterGame[k];
-        //            }
-        //        }
-        //    }
-
-
-        //    return result;
-        //}
+        public static void BubbleSort(Team[] teams)
+        {
+            for (int i = 0; i < teams.Length - 1; i++)
+            {
+                for (int j = 0; j < teams.Length - 1; j++)
+                {
+                    if (teams[j].points < teams[j + 1].points)
+                    {
+                        //Swap(teams, j, j + 1);
+                        Team temp = teams[j];
+                        teams[j] = teams[j + 1];
+                        teams[j + 1] = temp;
+                    }
+                }
+            }
+        }
     }
 }

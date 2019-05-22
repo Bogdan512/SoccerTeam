@@ -34,27 +34,22 @@ namespace SoccerTeam.Tests
         }
 
         [Fact]
-        public void Check_If_Update_Updates_With_new_Value()
+        public void Check_If_Update_Updates_With_new_Values()
         {
-            var teams = new Team[]
+            // ARRANGE
+            var ranking = new Ranking(new Team[]
             {
                 new Team("CFR",  37),
                 new Team("Astra",35),
-                new Team("FC",33)
-            };
+                new Team("FC",   33)
+            });
 
-            var newValuesTeams = new Team[]
-            {
-                new Team("Astra",40),
-                new Team("CFR",  38),
-                new Team("FC",37)
-            };
+            // ACT
+            ranking.Update(new Game("Astra", "FC", 3, 1));
 
-            Ranking ranking = new Ranking(newValuesTeams);
-
-            string[] expected = { "Astra - 40", "CFR - 38", "FC - 37" };
-            string[] actual = ranking.Update();
-            Assert.Equal(expected, actual);
+            // ASSERT
+            string[] expected = { "Astra - 38", "CFR - 37", "FC - 34" };
+            Assert.Equal(expected, ranking.Print());
         }
     }
 }

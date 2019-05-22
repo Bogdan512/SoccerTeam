@@ -53,7 +53,6 @@ namespace SoccerTeam
                 {
                     if (teams[j].points < teams[j + 1].points)
                     {
-                        //Swap(teams, j, j + 1);
                         Team temp = teams[j];
                         teams[j] = teams[j + 1];
                         teams[j + 1] = temp;

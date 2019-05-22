@@ -18,10 +18,5 @@ namespace SoccerTeam
             this.pointsTeam1 = pointsTeam1;
             this.pointsTeam2 = pointsTeam2;
         }
-
-        public string Print()
-        {
-            return $"{ team1} - { pointsTeam1}, { team2} - { pointsTeam2}";
-        }
     }
 }

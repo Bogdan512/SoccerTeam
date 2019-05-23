@@ -28,35 +28,46 @@ namespace SoccerTeam
             return result;
         }
 
-        public void Update(Game game)
+        public string[] Update(Game game)
         {
+            string[] gamePrint = game.Print();
+            string[] result = new string[teams.Length];
             for (int i = 0; i < teams.Length; i++)
             {
-
-                    if (teams[i].name == game.team1)
-                    {
-                        teams[i] = new Team(game.team1, teams[i].points + game.pointsTeam1);
-                    }
-                    if (teams[i].name == game.team2)
-                    {
-                        teams[i] = new Team(game.team2, teams[i].points + game.pointsTeam2);
-                    }              
+                string[] teamsSplit = teams[i].Print().Split('-');
+                string[] gamePrintSplit1 = gamePrint[0].Split('-');
+                string[] gamePrintSplit2 = gamePrint[1].Split('-');
+                if (teamsSplit[0] == gamePrintSplit1[0])
+                {
+                    int teamsSplitPoints = Convert.ToInt32(teamsSplit[1]);
+                    int gamePrintSplitPoints = Convert.ToInt32(gamePrintSplit1[1]);
+                    int sumPoints = teamsSplitPoints + gamePrintSplitPoints;
+                    result[i] = teamsSplit[0] + "- " + sumPoints.ToString();
+                    continue;
+                }
+                if (teamsSplit[0] == gamePrintSplit2[0])
+                {
+                    int teamsSplitPoints = Convert.ToInt32(teamsSplit[1]);
+                    int gamePrintSplitPoints = Convert.ToInt32(gamePrintSplit2[1]);
+                    int sumPoints = teamsSplitPoints + gamePrintSplitPoints;
+                    result[i] = teamsSplit[0] + "- " + sumPoints.ToString();
+                    continue;
+                }
+                else result[i] = teams[i].Print();
             }
-            BubbleSort(teams);
+            Sort(result);
+            return result;
         }
 
-        public static void BubbleSort(Team[] teams)
+        public void Sort(string[] str)
         {
-            for (int i = 0; i < teams.Length - 1; i++)
+            for (int j = 0; j < str.Length - 1; j++)
             {
-                for (int j = 0; j < teams.Length - 1; j++)
+                if (str[j][Convert.ToInt32(str.Length-1)] < str[j + 1][Convert.ToInt32(str.Length - 1)])
                 {
-                    if (teams[j].points < teams[j + 1].points)
-                    {
-                        Team temp = teams[j];
-                        teams[j] = teams[j + 1];
-                        teams[j + 1] = temp;
-                    }
+                    string temp = str[j];
+                    str[j] = str[j + 1];
+                    str[j + 1] = temp;
                 }
             }
         }

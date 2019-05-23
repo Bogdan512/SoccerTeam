@@ -15,9 +15,9 @@ namespace SoccerTeam
            });
 
             // ACT
-            ranking.Update(new Game("Astra", "FC", 3, 1));
+            string[] actual = ranking.Update(new Game("Astra", "FC", 3, 1));
             string[] expected = { "Astra - 38", "CFR - 37", "FC - 33" };
-            string[] actual = ranking.Print();
+
             foreach (string s in actual)
             {
                 Console.WriteLine(s);

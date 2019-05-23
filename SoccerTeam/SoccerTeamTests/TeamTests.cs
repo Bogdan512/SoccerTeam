@@ -45,11 +45,11 @@ namespace SoccerTeam.Tests
             });
 
             // ACT
-            ranking.Update(new Game("Astra", "FC", 3, 1));
+            string[] actual = ranking.Update(new Game("Astra", "FC", 3, 1));
 
             // ASSERT
             string[] expected = { "Astra - 38", "CFR - 37", "FC - 34" };
-            Assert.Equal(expected, ranking.Print());
+            Assert.Equal(expected, actual);
         }
     }
 }

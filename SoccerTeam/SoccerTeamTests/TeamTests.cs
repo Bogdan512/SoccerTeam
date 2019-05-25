@@ -20,5 +20,13 @@ namespace SoccerTeam.Tests
             string actual = team.GetTeamName();
             Assert.Equal("Valenii din Vale", actual);
         }
+
+        [Fact]
+        public void Should_Return_The_Nr_Of_Points_A_Team_Has()
+        {
+            Team team = new Team("Valenii din Vale", 3);
+            int actual = team.GetTeamPoints();
+            Assert.Equal(3, actual);
+        }
     }
 }

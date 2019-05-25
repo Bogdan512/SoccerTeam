@@ -24,5 +24,10 @@ namespace SoccerTeam
         {
             return $"{name}";
         }
+
+        public int GetTeamPoints()
+        {
+            return points;
+        }
     }
 }

@@ -24,23 +24,23 @@ namespace SoccerTeam.Tests
             Assert.Equal(expected, actual);
         }
 
-        //[Fact]
-        //public void Check_If_Update_Updates_With_new_Values()
-        //{
-        //    ARRANGE
-        //   var ranking = new Ranking(new Team[]
-        //   {
-        //        new Team("CFR",  37),
-        //        new Team("Astra",35),
-        //        new Team("FC",   33)
-        //   });
+        [Fact]
+        public void Check_If_Update_Updates_With_new_Values()
+        {
+            //ARRANGE
+           var ranking = new Ranking(new Team[]
+           {
+                new Team("CFR",  37),
+                new Team("Astra",35),
+                new Team("FC",   33)
+           });
 
-        //    ACT
-        //    string[] actual = ranking.Update(new Game("Astra", "FC", 3, 1));
+            //ACT
+            string[] actual = ranking.Update(new Game("Astra", "FC", 3, 1));
 
-        //    ASSERT
-        //    string[] expected = { "Astra - 38", "CFR - 37", "FC - 34" };
-        //    Assert.Equal(expected, actual);
-        //}
+            //ASSERT
+            string[] expected = { "Astra - 38", "CFR - 37", "FC - 34" };
+            Assert.Equal(expected, actual);
+        }
     }
 }

@@ -19,5 +19,10 @@ namespace SoccerTeam
         {
             return $"{ name} - { points}";
         }
+
+        public string GetTeamName()
+        {
+            return $"{name}";
+        }
     }
 }

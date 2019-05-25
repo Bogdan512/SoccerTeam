@@ -36,5 +36,13 @@ namespace SoccerTeam
             }
             else return -45;
         }
+
+        public string[] GetTeamsNames()
+        {
+            string[] result = new string[2];
+            result[0] = team1;
+            result[1] = team2;
+            return result;
+        }
     }
 }

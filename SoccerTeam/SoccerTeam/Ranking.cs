@@ -34,23 +34,24 @@ namespace SoccerTeam
             for (int i = 0; i < teams.Length; i++)
             {
                 string teamName = teams[i].GetTeamName();
-                if (true)
-                {
-                    int teamsSplitPoints = Convert.ToInt32(teamsSplit[1]);
-                    int gamePrintSplitPoints = Convert.ToInt32(gamePrintSplit1[1]);
-                    int sumPoints = teamsSplitPoints + gamePrintSplitPoints;
-                    result[i] = teamsSplit[0] + "- " + sumPoints.ToString();
-                    continue;
-                }
-                if (teamsSplit[0] == gamePrintSplit2[0])
-                {
-                    int teamsSplitPoints = Convert.ToInt32(teamsSplit[1]);
-                    int gamePrintSplitPoints = Convert.ToInt32(gamePrintSplit2[1]);
-                    int sumPoints = teamsSplitPoints + gamePrintSplitPoints;
-                    result[i] = teamsSplit[0] + "- " + sumPoints.ToString();
-                    continue;
-                }
-                else result[i] = teams[i].Print();
+                int teamPoints = teams[i].GetTeamPoints();
+                //if (teamName ==)
+                //{
+                //    int teamsSplitPoints = Convert.ToInt32(teamsSplit[1]);
+                //    int gamePrintSplitPoints = Convert.ToInt32(gamePrintSplit1[1]);
+                //    int sumPoints = teamsSplitPoints + gamePrintSplitPoints;
+                //    result[i] = teamsSplit[0] + "- " + sumPoints.ToString();
+                //    continue;
+                //}
+                //if (teamsSplit[0] == gamePrintSplit2[0])
+                //{
+                //    int teamsSplitPoints = Convert.ToInt32(teamsSplit[1]);
+                //    int gamePrintSplitPoints = Convert.ToInt32(gamePrintSplit2[1]);
+                //    int sumPoints = teamsSplitPoints + gamePrintSplitPoints;
+                //    result[i] = teamsSplit[0] + "- " + sumPoints.ToString();
+                //    continue;
+                //}
+                //else result[i] = teams[i].Print();
             }
             Sort(result);
             return result;

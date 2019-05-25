@@ -8,6 +8,19 @@ namespace SoccerTeam.Tests
     public class GameTests
     {
         [Fact]
+        public void Should_Return_The_Name_And_Points_Of_Two_Teams_That_Played()
+        {
+            //Arrange
+            Game game = new Game("Ajax", "Fairy", 3, 1);
+
+            //Act
+            string actual = game.Print();
+
+            //Assert
+            string expected = "Ajax - Fairy, 3 - 1";
+        }
+
+        [Fact]
         public void Sould_Return_The_Nr_Of_Points_A_Team_Gets_After_A_Game()
         {
             Game game = new Game("Sparta", "Craca", 1, 1);
@@ -17,11 +30,12 @@ namespace SoccerTeam.Tests
         }
 
         [Fact]
-        public void Should_Return_The_Name_And_Points_Of_Two_Teams_That_Played()
+        public void Should_Return_The_Names_Of_The_Two_Teams()
         {
-            Game game = new Game("Ajax", "Fairy", 3, 1);
-            string actual = game.Print();
-            string expected = "Ajax - Fairy, 3 - 1";
+            Game game = new Game("Fc", "UCluj", 1, 1);
+            string[] actual = game.GetTeamsNames();
+            string[] expected = {"Fc", "UCluj"};
+            Assert.Equal(expected, actual);
         }
     }
 }

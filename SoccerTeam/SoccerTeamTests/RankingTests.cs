@@ -36,7 +36,8 @@ namespace SoccerTeam.Tests
            });
 
             //ACT
-            string[] actual = ranking.Update(new Game("Astra", "FC", 3, 1));
+             ranking.Update(new Game("Astra", "FC", 3, 1));
+            string[] actual = ranking.Print();
 
             //ASSERT
             string[] expected = { "Astra - 38", "CFR - 37", "FC - 34" };

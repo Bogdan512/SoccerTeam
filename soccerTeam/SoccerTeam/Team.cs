@@ -6,8 +6,8 @@ namespace SoccerTeam
 {
     public class Team
     {
-        public readonly string name;
-        public readonly int points;
+        string name;
+        int points;
 
         public Team(string name, int points)
         {

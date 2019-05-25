@@ -28,38 +28,38 @@ namespace SoccerTeam
             return result;
         }
 
-        public string[] Update(Game game)
+        public void Update(Game game)
         {
-            string[] gamePrint = game.Print();
-            string[] result = new string[teams.Length];
-            for (int i = 0; i < teams.Length; i++)
-            {
-                string[] teamsSplit = teams[i].Print().Split('-');
-                string[] gamePrintSplit1 = gamePrint[0].Split('-');
-                string[] gamePrintSplit2 = gamePrint[1].Split('-');
-                if (teamsSplit[0] == gamePrintSplit1[0])
-                {
-                    int teamsSplitPoints = Convert.ToInt32(teamsSplit[1]);
-                    int gamePrintSplitPoints = Convert.ToInt32(gamePrintSplit1[1]);
-                    int sumPoints = teamsSplitPoints + gamePrintSplitPoints;
-                    result[i] = teamsSplit[0] + "- " + sumPoints.ToString();
-                    continue;
-                }
-                if (teamsSplit[0] == gamePrintSplit2[0])
-                {
-                    int teamsSplitPoints = Convert.ToInt32(teamsSplit[1]);
-                    int gamePrintSplitPoints = Convert.ToInt32(gamePrintSplit2[1]);
-                    int sumPoints = teamsSplitPoints + gamePrintSplitPoints;
-                    result[i] = teamsSplit[0] + "- " + sumPoints.ToString();
-                    continue;
-                }
-                else result[i] = teams[i].Print();
+            //    //string[] gamePrint = game.Print();
+            //    string[] result = new string[teams.Length];
+            //    for (int i = 0; i < teams.Length; i++)
+            //    {
+            //        string[] teamsSplit = teams[i].Print().Split('-');
+            //        string[] gamePrintSplit1 = gamePrint[0].Split('-');
+            //        string[] gamePrintSplit2 = gamePrint[1].Split('-');
+            //        if (teamsSplit[0] == gamePrintSplit1[0])
+            //        {
+            //            int teamsSplitPoints = Convert.ToInt32(teamsSplit[1]);
+            //            int gamePrintSplitPoints = Convert.ToInt32(gamePrintSplit1[1]);
+            //            int sumPoints = teamsSplitPoints + gamePrintSplitPoints;
+            //            result[i] = teamsSplit[0] + "- " + sumPoints.ToString();
+            //            continue;
+            //        }
+            //        if (teamsSplit[0] == gamePrintSplit2[0])
+            //        {
+            //            int teamsSplitPoints = Convert.ToInt32(teamsSplit[1]);
+            //            int gamePrintSplitPoints = Convert.ToInt32(gamePrintSplit2[1]);
+            //            int sumPoints = teamsSplitPoints + gamePrintSplitPoints;
+            //            result[i] = teamsSplit[0] + "- " + sumPoints.ToString();
+            //            continue;
+            //        }
+            //        else result[i] = teams[i].Print();
+            //    }
+            //    Sort(result);
+            //    return result;
             }
-            Sort(result);
-            return result;
-        }
 
-        public void Sort(string[] str)
+            public void Sort(string[] str)
         {
             for (int j = 0; j < str.Length - 1; j++)
             {

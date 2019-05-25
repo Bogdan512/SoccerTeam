@@ -19,14 +19,22 @@ namespace SoccerTeam
             this.pointsTeam2 = pointsTeam2;
         }
 
-        public string[] Print()
+        public string Print()
         {
-            string[] result = new string[2];
-            string teamOne = team1 + " - " + pointsTeam1.ToString();
-            string teamTwo = team2 + " - " + pointsTeam2.ToString();
-            result[0] = teamOne;
-            result[1] = teamTwo;
-            return result;
+            return $"{team1} - {team2}, {pointsTeam1} - {pointsTeam2}";
+        }
+
+        public int GetTeamPoints(string team)
+        {
+            if (team == team1)
+            {
+                return pointsTeam1;
+            }
+            if (team == team2)
+            {
+                return pointsTeam2;
+            }
+            else return -45;
         }
     }
 }

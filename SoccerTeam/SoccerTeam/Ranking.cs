@@ -30,16 +30,14 @@ namespace SoccerTeam
 
         public void Update(Game game)
         {
-            string[] result = new string[teams.Length];
             for (int i = 0; i < teams.Length; i++)
             {
                teams[i].UpdatePoints(game);
-                result[i] = teams[i].Print();
             }
-            Sort(teams);
+            Sort();
         }
 
-        void Sort(Team[] teams)
+        void Sort()
         {
             for (int j = 0; j < teams.Length - 1; j++)
             {

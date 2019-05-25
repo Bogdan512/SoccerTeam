@@ -28,13 +28,5 @@ namespace SoccerTeam.Tests
             int expected = 1;
             Assert.Equal(1, actual);
         }
-
-        [Fact]
-        public void Should_Return_The_Score()
-        {
-            Game game = new Game("Fc", "UCluj", 3, 1);
-            string actual = game.GetScore();
-            Assert.Equal("Fc - UCluj, 3 - 1", actual);
-        }
     }
 }

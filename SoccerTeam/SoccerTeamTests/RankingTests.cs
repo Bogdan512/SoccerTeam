@@ -40,7 +40,7 @@ namespace SoccerTeam.Tests
             string[] actual = ranking.Print();
 
             //ASSERT
-            string[] expected = { "Astra - 38", "CFR - 37", "FC - 34" };
+            string[] expected = { "Astra - 38", "CFR - 37", "FC - 33" };
             Assert.Equal(expected, actual);
         }
     }

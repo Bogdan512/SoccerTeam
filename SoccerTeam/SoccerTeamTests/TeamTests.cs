@@ -14,19 +14,14 @@ namespace SoccerTeam.Tests
         }
 
         [Fact]
-        public void Should_Return_The_Name_Of_A_Team()
+        public void Should_Update_The_Points_Of_The_Team()
         {
-            Team team = new Team("Valenii din Vale", 3);
-            string actual = team.GetTeamName();
-            Assert.Equal("Valenii din Vale", actual);
-        }
+            Team team = new Team("o echipa", 33);
+            Game game = new Game("o echipa", "alta echipa", 1, 1);
+            team.UpdatePoints(game);
+            string actual = team.Print();
+            Assert.Equal("o echipa - 34", actual);
 
-        [Fact]
-        public void Should_Return_The_Nr_Of_Points_A_Team_Has()
-        {
-            Team team = new Team("Valenii din Vale", 3);
-            int actual = team.GetTeamPoints();
-            Assert.Equal(3, actual);
         }
     }
 }

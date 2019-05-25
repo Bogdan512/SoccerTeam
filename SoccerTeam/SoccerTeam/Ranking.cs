@@ -31,27 +31,27 @@ namespace SoccerTeam
         public string[] Update(Game game)
         {
             string[] result = new string[teams.Length];
-            for (int i = 0; i < teams.Length; i++)
-            {
-                string teamName = teams[i].GetTeamName();
-                int teamPoints = teams[i].GetTeamPoints();
-                string[] gameTeamsNames= game.GetTeamsNames();
-                int gameTeamPoints = game.GetTeamPoints(teamName);
-                int sumPoints = 0;
-                if (teamName == gameTeamsNames[0])
-                {
-                    sumPoints = teamPoints + gameTeamPoints;
-                    result[i] = teamName + " - " + sumPoints;
-                    continue;
-                }
-                if (teamName == gameTeamsNames[1])
-                {
-                    sumPoints = teamPoints + gameTeamPoints;
-                    result[i] = teamName + " - " + sumPoints;
-                    continue;
-                }
-                else result[i] = teams[i].Print();
-            }
+            //for (int i = 0; i < teams.Length; i++)
+            //{
+            //    string teamName = teams[i].GetTeamName();
+            //    int teamPoints = teams[i].GetTeamPoints();
+            //    //string[] gameTeamsNames= game.GetTeamsNames();
+            //    int gameTeamPoints = game.GetTeamPoints(teamName);
+            //    int sumPoints = 0;
+            //    if (teamName == gameTeamsNames[0])
+            //    {
+            //        sumPoints = teamPoints + gameTeamPoints;
+            //        result[i] = teamName + " - " + sumPoints;
+            //        continue;
+            //    }
+            //    if (teamName == gameTeamsNames[1])
+            //    {
+            //        sumPoints = teamPoints + gameTeamPoints;
+            //        result[i] = teamName + " - " + sumPoints;
+            //        continue;
+            //    }
+            //    else result[i] = teams[i].Print();
+            //}
             Sort(result);
             return result;
         }

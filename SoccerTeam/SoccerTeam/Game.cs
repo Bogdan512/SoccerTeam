@@ -26,23 +26,22 @@ namespace SoccerTeam
 
         public int GetTeamPoints(string team)
         {
+            int result = 0;
+
             if (team == team1)
             {
-                return pointsTeam1;
+                result = pointsTeam1;
             }
             if (team == team2)
             {
-                return pointsTeam2;
+                result = pointsTeam2;
             }
-            else return -45;
+            return result;
         }
 
-        public string[] GetTeamsNames()
+        public string GetScore()
         {
-            string[] result = new string[2];
-            result[0] = team1;
-            result[1] = team2;
-            return result;
+            return $"{team1} - {team2}, {pointsTeam1} - {pointsTeam2}";
         }
     }
 }

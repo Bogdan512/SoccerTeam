@@ -30,12 +30,11 @@ namespace SoccerTeam.Tests
         }
 
         [Fact]
-        public void Should_Return_The_Names_Of_The_Two_Teams()
+        public void Should_Return_The_Score()
         {
-            Game game = new Game("Fc", "UCluj", 1, 1);
-            string[] actual = game.GetTeamsNames();
-            string[] expected = {"Fc", "UCluj"};
-            Assert.Equal(expected, actual);
+            Game game = new Game("Fc", "UCluj", 3, 1);
+            string actual = game.GetScore();
+            Assert.Equal("Fc - UCluj, 3 - 1", actual);
         }
     }
 }

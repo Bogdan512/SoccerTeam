@@ -7,6 +7,7 @@ namespace SoccerTeam
         
         static void Main(string[] args)
         {
+           
             Console.Read();
         }
     }

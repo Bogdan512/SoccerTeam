@@ -20,14 +20,13 @@ namespace SoccerTeam
             return $"{ name} - { points}";
         }
 
-        public string GetTeamName()
+        public void UpdatePoints(Game game)
         {
-            return $"{name}";
-        }
-
-        public int GetTeamPoints()
-        {
-            return points;
+            int gamePoints = game.GetTeamPoints(name);
+            if (gamePoints != 0)
+            {
+                points = points + gamePoints;
+            }
         }
     }
 }

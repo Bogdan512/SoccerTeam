@@ -39,16 +39,21 @@ namespace SoccerTeam
 
         void Sort()
         {
-            for (int j = 0; j < teams.Length - 1; j++)
+            int i;
+            int j;
+
+            for (i = 0; i < teams.Length; i++)
             {
-                string team = teams[j].Print();
-                string teamPlus1 = teams[j + 1].Print();
-                if (Convert.ToInt32(team.Length - 1) < Convert.ToInt32(teamPlus1.Length - 1))
+                for (j = i; j < teams.Length; j++)
                 {
-                    Team temp = teams[j];
-                    teams[j] = teams[j + 1];
-                    teams[j + 1] = temp;
+                    if (teams[i].CompareTo(teams[j]) == 1)
+                    {
+                        Team temp = teams[i];
+                        teams[i] = teams[j];
+                        teams[j] = temp;
+                    }
                 }
+                
             }
         }
     }

@@ -10,7 +10,6 @@ namespace SoccerTeam
        string team2;
        int goalsTeam1;
        int goalsTeam2;
-        Team team;
 
         public Game(string team1, string team2, int goalsTeam1, int goalsTeam2)
         {

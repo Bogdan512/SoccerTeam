@@ -25,5 +25,18 @@ namespace SoccerTeam
             int gamePoints = game.GetTeamPoints(name);
                 points = points + gamePoints;
         }
+
+        public int CompareTo(Team other)
+        {
+            if (other.points < points)
+            {
+                return -1;
+            }
+            if (other.points > points)
+            {
+                return 1;
+            }
+            else return 0;
+        }
     }
 }

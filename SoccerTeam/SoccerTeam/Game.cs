@@ -28,23 +28,25 @@ namespace SoccerTeam
         {
             int result = 0;
 
-            if (team == team1 )
+            if(team == team1 || team == team2)
+            {
+                if (goalsTeam1 == goalsTeam2)
+                return 1;
+            }
+
+            if (team == team1)
             {
                 if (goalsTeam1 > goalsTeam2)
-                    result = 3;
+                    return 3;
                 if (goalsTeam1 < goalsTeam2)
-                    result = 0;
-                if(goalsTeam1 == goalsTeam2)
-                    result = 1;
+                    return 0;
             }
             if (team == team2)
             {
                 if (goalsTeam2 > goalsTeam1)
-                    result = 3;
+                    return 3;
                 if (goalsTeam2 < goalsTeam1)
-                    result = 0;
-                if (goalsTeam2 == goalsTeam1)
-                    result = 1;
+                    return 0;
             }
             return result;
         }

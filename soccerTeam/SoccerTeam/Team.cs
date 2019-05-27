@@ -23,10 +23,20 @@ namespace SoccerTeam
         public void UpdatePoints(Game game)
         {
             int gamePoints = game.GetTeamPoints(name);
-            if (gamePoints != 0)
-            {
                 points = points + gamePoints;
+        }
+
+        public int CompareTo(Team other)
+        {
+            if (other.points < points)
+            {
+                return -1;
             }
+            if (other.points > points)
+            {
+                return 1;
+            }
+            else return 0;
         }
     }
 }

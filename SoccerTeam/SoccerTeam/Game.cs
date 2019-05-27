@@ -26,23 +26,17 @@ namespace SoccerTeam
 
         bool HasPlayed(string team)
         {
-            if (team == team1) return true;
-            if (team == team2) return true;
-            return false;
+            return (team == team1 || team == team2);
         }
 
         bool IsADraw()
         {
-            if (goalsTeam1 == goalsTeam2)
-                return true;
-            return false;
+            return (goalsTeam1 == goalsTeam2);
         }
 
         string Winner()
         {
-            if (goalsTeam1 > goalsTeam2)
-                return team1;
-            return team2;
+             return goalsTeam1 > goalsTeam2 ? team1 : team2;
         }
 
         public int GetTeamPoints(string team)

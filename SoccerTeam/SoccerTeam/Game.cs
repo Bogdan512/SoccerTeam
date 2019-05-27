@@ -24,31 +24,34 @@ namespace SoccerTeam
             return $"{team1} - {team2}, {goalsTeam1} - {goalsTeam2}";
         }
 
+        bool HasPlayed(string team)
+        {
+            if (team == team1) return true;
+            if (team == team2) return true;
+            return false;
+        }
+
+        bool IsADraw()
+        {
+            if (goalsTeam1 == goalsTeam2)
+                return true;
+            return false;
+        }
+
+        string Winner()
+        {
+            if (goalsTeam1 > goalsTeam2)
+                return team1;
+            return team2;
+        }
+
         public int GetTeamPoints(string team)
         {
-            int result = 0;
-
-            if(team == team1 || team == team2)
-            {
-                if (goalsTeam1 == goalsTeam2)
+            if (HasPlayed(team) && IsADraw())
                 return 1;
-            }
-
-            if (team == team1)
-            {
-                if (goalsTeam1 > goalsTeam2)
-                    return 3;
-                if (goalsTeam1 < goalsTeam2)
-                    return 0;
-            }
-            if (team == team2)
-            {
-                if (goalsTeam2 > goalsTeam1)
-                    return 3;
-                if (goalsTeam2 < goalsTeam1)
-                    return 0;
-            }
-            return result;
+            if (Winner() == team)
+                return 3;
+            return 0;
         }
     }
 }
